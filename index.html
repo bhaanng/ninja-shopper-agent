@@ -106,7 +106,7 @@
             
             const [userProfile, setUserProfile] = useState({
                 name: "Bhagath",
-                demographic: "Male, 40 yrs",
+                demographic: "Male, Mid-30s",
                 location: "San Ramon, CA",
                 ownedProducts: ["Ninja Creami"],
                 preferences: {}
@@ -117,7 +117,7 @@
 
             // --- MOCK DATA ---
             const dataCategories = [
-                { id: 1, name: "Shopper Profile", status: "Active", detail: "40 yr old Male / Efficiency Seeker" },
+                { id: 1, name: "Shopper Profile", status: "Active", detail: "Mid-30s Male / Efficiency Seeker" },
                 { id: 2, name: "Order History", status: "Active", detail: "Ninja Creami Owner" },
                 { id: 5, name: "✨ AI Intent Analysis", status: "Active", detail: aiBrainInsight },
                 { id: 6, name: "Logistics", status: "Active", detail: "Prioritizing Fast Delivery" },
@@ -139,7 +139,8 @@
                 { id: 'blender-ultimate', category: 'blender', name: "Ninja® Foodi® Power Blender Ultimate System", tag: "The Do-It-All", type: 'system', description: "Crushes, processes, and makes dough. Enhanced processing lid and nutrient extraction cups for versatility.", price: "$239.99", promoPrice: "$219.99", image: "https://i.ibb.co/tpQ3hNNp/Gemini-Generated-Image-cpe9r9cpe9r9cpe9.png", rating: 4.8 },
                 { id: 'blender-detect', category: 'blender', name: "Ninja Detect™ Kitchen System Power Blender Plus Processor Pro", tag: "Smartest Blender", type: 'system', description: "Features BlendSense™ Technology that automatically adjusts speed and time for perfectly smooth results. No guesswork.", price: "$229.99", promoPrice: "$189.99", image: "https://i.ibb.co/Pz1z14C2/Gemini-Generated-Image-8rb91o8rb91o8rb9.png", rating: 5.0 },
                 { id: 'acc-creami-pints', category: 'accessory', name: "Ninja® Creami® Pints (2-Pack)", tag: "Essential Add-on", type: 'storage', description: "Extra pints for your Ninja Creami. Pre-freeze more flavors for Gameday so you never run out.", price: "$29.99", promoPrice: "$24.99", image: "https://i.ibb.co/qMQ8qcFt/Screenshot-2026-02-10-at-12-33-23-AM.png", rating: 4.8 },
-                { id: 'acc-cleancrisp', category: 'accessory', name: "6-QT CleanCrisp™ Container", tag: "Prep & Store", type: 'storage', description: "Extra glass vessel for your Crispi system. Prep your wings ahead of time and swap baskets instantly during the party.", price: "$34.99", promoPrice: "$29.99", image: "https://i.ibb.co/r2Q7Z17m/Gemini-Generated-Image-347dje347dje347d.png", rating: 4.9 }
+                { id: 'acc-cleancrisp', category: 'accessory', name: "6-QT CleanCrisp™ Container", tag: "Prep & Store", type: 'storage', description: "Extra glass vessel for your Crispi system. Prep your wings ahead of time and swap baskets instantly during the party.", price: "$34.99", promoPrice: "$29.99", image: "https://i.ibb.co/r2Q7Z17m/Gemini-Generated-Image-347dje347dje347d.png", rating: 4.9 },
+                { id: 'acc-blender-cups', category: 'accessory', name: "24 oz. Single-Serve Cups (2-Pack)", tag: "Perfect Portions", type: 'storage', description: "Extra cups with spout lids. Perfect for taking your Gameday margaritas or morning smoothies on the go.", price: "$24.99", promoPrice: "$19.99", image: "https://images.unsplash.com/photo-1570222094114-d054a817e56b?auto=format&fit=crop&q=80&w=600", fallbackImage: "https://images.unsplash.com/photo-1570222094114-d054a817e56b?auto=format&fit=crop&q=80&w=600", rating: 4.8 }
             ];
 
             // --- LOGIC ---
@@ -319,7 +320,17 @@
                     else if (currentStep === 8) { 
                         if (currentVal === "show_accessories") {
                             const products = allProducts.filter(p => p.category === 'accessory');
-                            setMessages(prev => [...prev, { role: 'agent', content: "Here are the best accessories to reach that $400 threshold. The <b>Creami Pints</b> are a shopper favorite!", type: 'carousel', products: products, isResultHeader: true }]);
+                            
+                            const total = cartItems.reduce((acc, item) => acc + parseFloat(item.promoPrice.replace('$', '')), 0);
+                            const gap = 400 - total;
+                            const minAccessoryPrice = Math.min(...products.map(p => parseFloat(p.promoPrice.replace('$', ''))));
+                            
+                            let contentMsg = "Here are the best accessories to reach that $400 threshold. The <b>Creami Pints</b> are a shopper favorite!";
+                            if (gap > 0 && gap < minAccessoryPrice) {
+                                contentMsg = `I couldn't find any products under $${Math.ceil(gap)}, but these are some great accessories for you to consider to reach that $400 threshold.`;
+                            }
+                            
+                            setMessages(prev => [...prev, { role: 'agent', content: contentMsg, type: 'carousel', products: products, isResultHeader: true }]);
                             setActiveCategory('accessory'); setScrollToResults(true); setIsTyping(false); return;
                         } else {
                             response = "Understood. Proceeding to checkout with your Air Fryer and Blender.";
@@ -358,6 +369,7 @@
                         if (total < threshold) {
                             const gap = (threshold - total).toFixed(2);
                             const gapCeiling = Math.ceil(parseFloat(gap));
+                            
                             setMessages(prev => [...prev, {
                                 role: 'agent', content: `<b>${product.name}</b> added. 🛒<br><br>Your current cart total is - <b>$${total.toFixed(2)}</b>, and you are <b>$${gap}</b> away from the <b>$50 platinum discount</b>.<br><br>Would you like me to show you products under <b>$${gapCeiling}</b> so you get the discount?`,
                                 options: [ { label: "Yes, show products", value: "show_accessories" }, { label: "Proceed to checkout", value: "checkout_skip_acc" } ],
