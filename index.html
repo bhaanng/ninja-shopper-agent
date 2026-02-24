@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Ninja Shopper Agent Prototype</title>
+    <title>Ninja Shopper Agent</title>
     
     <!-- React & ReactDOM -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
@@ -19,7 +19,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        /* Hide scrollbar for clean UI */
+        /* Hide scrollbar for a cleaner UI */
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
@@ -31,7 +31,7 @@
         const { useState, useEffect, useRef } = React;
 
         // Helper component to render icons in a standalone HTML file
-        const Icon = ({ name, size = 24, className = "", strokeWidth = 2, fill = "none" }) => {
+        const Icon = ({ name, size = 24, className = "", strokeWidth = 2, fill = "none", style = {} }) => {
             const iconRef = useRef(null);
             
             useEffect(() => {
@@ -41,7 +41,7 @@
                 }
             }, [name, size, className, strokeWidth, fill]);
 
-            return <span ref={iconRef} style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}></span>;
+            return <span ref={iconRef} style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', ...style }}></span>;
         };
 
         const App = () => {
@@ -137,9 +137,10 @@
                 { id: 'crispi-pro-bone', category: 'airfryer', name: "Ninja Crispi™ Pro 6-in-1 Glass Air Fryer (Bone)", tag: "Classic Finish", type: 'glass', size: 'large', layout: 'wide', description: "Deep Charcoal finish. Features a heat-resistant clear glass basket and 'Keep Warm' functionality for party hosting.", price: "$199.99", promoPrice: "$159.99", image: "https://i.ibb.co/NdqztvhF/bone-glass-airfryer.png", fallbackImage: "https://images.unsplash.com/photo-1585238341267-1cfec2046a55?auto=format&fit=crop&q=80&w=600", rating: 4.9 },
                 { id: 'blender-system', category: 'blender', name: "Ninja® Professional Plus Kitchen System with Auto-iQ®", tag: "Total Kitchen Solution", type: 'system', description: "72 oz. Pitcher, 64 oz. Processor Bowl, and single-serve cups. Features Auto-iQ technology for one-touch intelligence.", price: "$219.99", promoPrice: "$199.99", image: "https://i.ibb.co/Cpnz6Gt4/Gemini-Generated-Image-ygn232ygn232ygn2.png", rating: 4.9 },
                 { id: 'blender-ultimate', category: 'blender', name: "Ninja® Foodi® Power Blender Ultimate System", tag: "The Do-It-All", type: 'system', description: "Crushes, processes, and makes dough. Enhanced processing lid and nutrient extraction cups for versatility.", price: "$239.99", promoPrice: "$219.99", image: "https://i.ibb.co/tpQ3hNNp/Gemini-Generated-Image-cpe9r9cpe9r9cpe9.png", rating: 4.8 },
-                { id: 'blender-detect', category: 'blender', name: "Ninja Detect™ Kitchen System Power Blender Plus Processor Pro", tag: "Smartest Blender", type: 'system', description: "Features BlendSense™ Technology that automatically adjusts speed and time for perfectly smooth results. No guesswork.", price: "$229.99", promoPrice: "$189.99", image: "https://i.ibb.co/Pz1z14C2/Gemini-Generated-Image-8rb91o8rb91o8rb9.png", rating: 5.0 },
+                { id: 'blender-detect', category: 'blender', name: "Ninja Detect™ Kitchen System Power Blender", tag: "Smartest Blender", type: 'system', description: "Features BlendSense™ Technology that automatically adjusts speed and time for perfectly smooth results. No guesswork.", price: "$229.99", promoPrice: "$189.99", image: "https://i.ibb.co/Pz1z14C2/Gemini-Generated-Image-8rb91o8rb91o8rb9.png", rating: 5.0 },
                 { id: 'acc-creami-pints', category: 'accessory', name: "Ninja® Creami® Pints (2-Pack)", tag: "Essential Add-on", type: 'storage', description: "Extra pints for your Ninja Creami. Pre-freeze more flavors for Gameday so you never run out.", price: "$29.99", promoPrice: "$24.99", image: "https://i.ibb.co/qMQ8qcFt/Screenshot-2026-02-10-at-12-33-23-AM.png", rating: 4.8 },
-                { id: 'acc-cleancrisp', category: 'accessory', name: "6-QT CleanCrisp™ Container", tag: "Prep & Store", type: 'storage', description: "Extra glass vessel for your Crispi system. Prep your wings ahead of time and swap baskets instantly during the party.", price: "$34.99", promoPrice: "$29.99", image: "https://i.ibb.co/r2Q7Z17m/Gemini-Generated-Image-347dje347dje347d.png", rating: 4.9 }
+                { id: 'acc-cleancrisp', category: 'accessory', name: "6-QT CleanCrisp™ Container", tag: "Prep & Store", type: 'storage', description: "Extra glass vessel for your Crispi system. Prep your wings ahead of time and swap baskets instantly during the party.", price: "$34.99", promoPrice: "$29.99", image: "https://i.ibb.co/r2Q7Z17m/Gemini-Generated-Image-347dje347dje347d.png", rating: 4.9 },
+                { id: 'acc-cups', category: 'accessory', name: "Single-Serve Blender Cups (24 oz)", tag: "On-The-Go", type: 'drinkware', description: "Blend directly in the cup. Perfect for individual smoothies or cocktails for guests.", price: "$39.99", promoPrice: "$29.99", image: "https://i.ibb.co/Y7jgy2PF/Gemini-Generated-Image-t5ios9t5ios9t5io.png", rating: 4.9 }
             ];
 
             // --- LOGIC ---
@@ -170,7 +171,7 @@
                 setAiAnalyzing(true);
 
                 try {
-                    const analysisPrompt = `Analyze: "${userText}". User: ${userProfile.name}. Identify primary intent. Keep response under 10 words.`;
+                    const analysisPrompt = `Analyze: "${userText}". User: ${userProfile.name} (San Ramon). Identify primary intent. Keep response under 10 words.`;
                     const analysis = await callGemini(analysisPrompt, "You are a Shopper Insights analyst.");
                     setAiBrainInsight(analysis || "Extracted intent for local inventory matching.");
                     setAiAnalyzing(false);
@@ -178,6 +179,7 @@
                     const lowerText = userText.toLowerCase();
 
                     setTimeout(() => {
+                        // --- NATURAL LANGUAGE PARSING FOR DIAGNOSTICS ---
                         if (currentStep === 'waiting_for_airfryer_requirements') {
                             const newPrefs = { ...diagnosticSelections };
                             
@@ -253,15 +255,109 @@
                 }
             };
 
+            const calculateTotal = (items) => items.reduce((acc, item) => acc + parseFloat(item.promoPrice.replace('$', '')), 0);
+
+            const handleAddToCart = (product) => {
+                const updatedCart = [...cartItems, product];
+                setCartItems(updatedCart);
+                setCartCount(updatedCart.length);
+                setScrollToResults(false);
+                setIsTyping(true);
+                
+                if (product.category === 'airfryer') {
+                    setTimeout(() => {
+                        setMessages(prev => [...prev, {
+                            role: 'agent', content: `I've added the <b>${product.name}</b> to your cart! 🛒<br><br><b>Gameday Pro Tip:</b> To really nail the party, you'll want restaurant-style margaritas to go with those wings. <br><br>Shall I help you find the <b>Perfect Ninja Blender</b> for your setup?`,
+                            options: [ { label: "Yes, find a Blender 🍹", value: "start_blender_flow" }, { label: "No, just Checkout", value: "checkout_skip" } ],
+                            isResultHeader: true
+                        }]);
+                        setCurrentStep(5); setScrollToResults(true); setIsTyping(false);
+                    }, 600);
+                } else if (product.category === 'blender' || product.category === 'accessory') {
+                    const total = calculateTotal(updatedCart);
+                    const threshold = 400;
+                    setTimeout(() => {
+                        if (total < threshold) {
+                            const gap = (threshold - total).toFixed(2);
+                            const gapCeiling = Math.ceil(parseFloat(gap));
+                            const accessories = allProducts.filter(p => p.category === 'accessory');
+                            
+                            setMessages(prev => [...prev, {
+                                role: 'agent', content: `<b>${product.name}</b> added. 🛒<br><br>Your current cart total is - <b>$${total.toFixed(2)}</b>, and you are <b>$${gap}</b> away from the <b>$50 platinum discount</b>.<br><br>Would you like me to show you products under <b>$${gapCeiling}</b> so you get the discount?`,
+                                options: [ { label: "Yes, show products", value: "show_accessories" }, { label: "Proceed to checkout", value: "checkout_skip_acc" } ],
+                                isResultHeader: true
+                            }]);
+                            setCurrentStep(8); setScrollToResults(true);
+                        } else {
+                            setMessages(prev => [...prev, {
+                                role: 'agent', content: `Boom! <b>${product.name}</b> added.<br><br>🎉 <b>Threshold Met!</b> Cart Total: $${total.toFixed(2)}. <br><b>$50 Platinum Discount Unlocked!</b><br><br>Your Gameday bundle is ready.`,
+                                options: [ { label: "Buy with Pay", value: "apple_pay" } ],
+                                isResultHeader: true
+                            }]);
+                            setCurrentStep(9); setScrollToResults(true);
+                        }
+                        setIsTyping(false);
+                    }, 600);
+                }
+            };
+
+            const simulateApplePay = () => {
+                setPaymentProcessing(true);
+                const subtotal = cartItems.reduce((acc, item) => acc + parseFloat(item.promoPrice.replace('$', '')), 0);
+                let thresholdDiscount = subtotal >= 400 ? 50 : 0;
+                const tax = (subtotal - thresholdDiscount) * 0.0975;
+                const total = (subtotal - thresholdDiscount) + tax;
+
+                setTimeout(() => setMessages(prev => [...prev, { role: 'agent', type: 'apple_pay_processing' }]), 500);
+
+                setTimeout(() => {
+                    setPaymentProcessing(false); setCartCount(0); setCartItems([]);
+                    setMessages(prev => {
+                        const filtered = prev.filter(m => m.type !== 'apple_pay_processing');
+                        const receipt = `✅ <b>Payment Successful</b><br><br><b>Order #SR-99281</b><br>📍 Delivery to San Ramon, CA<br><br>${cartItems.map(i => `• ${i.name}`).join('<br>')}<br><br><b>Subtotal:</b> $${subtotal.toFixed(2)}<br>${thresholdDiscount > 0 ? `<b>Bulk Discount:</b> -$${thresholdDiscount.toFixed(2)}<br>` : ''}<b>Tax (9.75%):</b> $${tax.toFixed(2)}<br>----------------<br><b>Total:</b> $${total.toFixed(2)}<br><br>Ready for kickoff! 🏈`;
+                        return [...filtered, { role: 'agent', content: receipt, complete: true }];
+                    });
+                }, 3000);
+            };
+
+            const getFilteredProducts = (filterCriteria) => {
+                if (filterCriteria && Array.isArray(filterCriteria)) return filterCriteria;
+                let targetCat = activeCategory;
+                if (filterCriteria && filterCriteria.category) targetCat = filterCriteria.category;
+
+                if (targetCat === 'blender') return allProducts.filter(p => p.category === 'blender');
+                if (targetCat === 'accessory') return allProducts.filter(p => p.category === 'accessory');
+                
+                if (targetCat === 'airfryer') {
+                    let results = allProducts.filter(p => p.category === 'airfryer');
+                    if (filterCriteria?.size) results = results.filter(p => (filterCriteria.size === 'small' ? p.tag.includes('Compact') : !p.tag.includes('Compact')));
+                    if (filterCriteria?.type) results = results.filter(p => p.type === filterCriteria.type);
+                    return results.slice(0,3);
+                }
+                return allProducts.filter(p => p.category === 'airfryer');
+            };
+
+            const generateRecipe = async (product) => {
+                setRecipeLoading(true);
+                try {
+                    const prompt = `${userProfile.name} owns a ${product.name}. Generate a fun air fryer recipe for a crowd. Title, 3 ingredients, 2 steps.`;
+                    // Hardcoded mock response for standalone HTML functionality if API fails
+                    const mockRecipe = "🏈 Gameday Garlic Parmesan Wings\n\nIngredients:\n- 2 lbs Chicken Wings\n- 1/4 cup Grated Parmesan\n- 1 tbsp Garlic Powder\n\nSteps:\n1. Toss wings in a bowl with a little oil. Set Air Fryer to 390°F and cook for 20 mins, flipping halfway.\n2. In a clean bowl, toss the hot, crispy wings with the garlic powder and parmesan until coated. Serve immediately!";
+                    
+                    let recipe = mockRecipe;
+                    if(apiKey) {
+                        try { recipe = await callGemini(prompt, "You are a professional chef."); } catch(e){}
+                    }
+                    setShowRecipeModal({ product, content: recipe });
+                } catch (err) { console.error(err); } finally { setRecipeLoading(false); }
+            };
+
             const handleUserSelection = (option, skipUserMessage) => {
                 setScrollToResults(false);
                 if (!skipUserMessage) setMessages(prev => [...prev, { role: 'user', content: option.label }]);
                 
                 const currentVal = option.value;
-                if (currentVal === "apple_pay") {
-                    simulateApplePay();
-                    return;
-                }
+                if (currentVal === "apple_pay") { simulateApplePay(); return; }
 
                 setIsTyping(true);
 
@@ -331,95 +427,6 @@
                     if (response) setMessages(prev => [...prev, { role: 'agent', content: response, options }]);
                     setIsTyping(false);
                 }, 1000);
-            };
-
-            const calculateTotal = (items) => items.reduce((acc, item) => acc + parseFloat(item.promoPrice.replace('$', '')), 0);
-
-            const handleAddToCart = (product) => {
-                const updatedCart = [...cartItems, product];
-                setCartItems(updatedCart);
-                setCartCount(updatedCart.length);
-                setScrollToResults(false);
-                setIsTyping(true);
-                
-                if (product.category === 'airfryer') {
-                    setTimeout(() => {
-                        setMessages(prev => [...prev, {
-                            role: 'agent', content: `I've added the <b>${product.name}</b> to your cart! 🛒<br><br><b>Gameday Pro Tip:</b> To really nail the party, you'll want restaurant-style margaritas to go with those wings. <br><br>Shall I help you find the <b>Perfect Ninja Blender</b> for your setup?`,
-                            options: [ { label: "Yes, find a Blender 🍹", value: "start_blender_flow" }, { label: "No, just Checkout", value: "checkout_skip" } ],
-                            isResultHeader: true
-                        }]);
-                        setCurrentStep(5); setScrollToResults(true); setIsTyping(false);
-                    }, 600);
-                } else if (product.category === 'blender' || product.category === 'accessory') {
-                    const total = calculateTotal(updatedCart);
-                    const threshold = 400;
-                    setTimeout(() => {
-                        if (total < threshold) {
-                            const gap = (threshold - total).toFixed(2);
-                            const gapCeiling = Math.ceil(parseFloat(gap));
-                            setMessages(prev => [...prev, {
-                                role: 'agent', content: `<b>${product.name}</b> added. 🛒<br><br>Your current cart total is - <b>$${total.toFixed(2)}</b>, and you are <b>$${gap}</b> away from the <b>$50 platinum discount</b>.<br><br>Would you like me to show you products under <b>$${gapCeiling}</b> so you get the discount?`,
-                                options: [ { label: "Yes, show products", value: "show_accessories" }, { label: "Proceed to checkout", value: "checkout_skip_acc" } ],
-                                isResultHeader: true
-                            }]);
-                            setCurrentStep(8); setScrollToResults(true);
-                        } else {
-                            setMessages(prev => [...prev, {
-                                role: 'agent', content: `Boom! <b>${product.name}</b> added.<br><br>🎉 <b>Threshold Met!</b> Cart Total: $${total.toFixed(2)}. <br><b>$50 Platinum Discount Unlocked!</b><br><br>Your Gameday bundle is ready.`,
-                                options: [ { label: "Buy with Pay", value: "apple_pay" } ],
-                                isResultHeader: true
-                            }]);
-                            setCurrentStep(9); setScrollToResults(true);
-                        }
-                        setIsTyping(false);
-                    }, 600);
-                }
-            };
-
-            const simulateApplePay = () => {
-                setPaymentProcessing(true);
-                const subtotal = cartItems.reduce((acc, item) => acc + parseFloat(item.promoPrice.replace('$', '')), 0);
-                let thresholdDiscount = subtotal >= 400 ? 50 : 0;
-                const tax = (subtotal - thresholdDiscount) * 0.0975;
-                const total = (subtotal - thresholdDiscount) + tax;
-
-                setTimeout(() => setMessages(prev => [...prev, { role: 'agent', type: 'apple_pay_processing' }]), 500);
-
-                setTimeout(() => {
-                    setPaymentProcessing(false); setCartCount(0); setCartItems([]);
-                    setMessages(prev => {
-                        const filtered = prev.filter(m => m.type !== 'apple_pay_processing');
-                        const receipt = `✅ <b>Payment Successful</b><br><br><b>Order #SR-99281</b><br>📍 Delivery to San Ramon, CA<br><br>${cartItems.map(i => `• ${i.name}`).join('<br>')}<br><br><b>Subtotal:</b> $${subtotal.toFixed(2)}<br>${thresholdDiscount > 0 ? `<b>Bulk Discount:</b> -$${thresholdDiscount.toFixed(2)}<br>` : ''}<b>Tax (9.75%):</b> $${tax.toFixed(2)}<br>----------------<br><b>Total:</b> $${total.toFixed(2)}<br><br>Ready for kickoff! 🏈`;
-                        return [...filtered, { role: 'agent', content: receipt, complete: true }];
-                    });
-                }, 3000);
-            };
-
-            const getFilteredProducts = (filterCriteria) => {
-                if (filterCriteria && Array.isArray(filterCriteria)) return filterCriteria;
-                let targetCat = activeCategory;
-                if (filterCriteria && filterCriteria.category) targetCat = filterCriteria.category;
-                if (targetCat === 'blender') return allProducts.filter(p => p.category === 'blender');
-                if (targetCat === 'accessory') return allProducts.filter(p => p.category === 'accessory');
-                if (targetCat === 'airfryer') {
-                    let results = allProducts.filter(p => p.category === 'airfryer');
-                    if (filterCriteria?.size) results = results.filter(p => (filterCriteria.size === 'small' ? p.tag.includes('Compact') : !p.tag.includes('Compact')));
-                    if (filterCriteria?.type) results = results.filter(p => p.type === filterCriteria.type);
-                    return results.slice(0,3);
-                }
-                return allProducts.filter(p => p.category === 'airfryer');
-            };
-
-            const generateRecipe = async (product) => {
-                setRecipeLoading(true);
-                try {
-                    const prompt = `${userProfile.name} owns a ${product.name}. Generate a fun air fryer recipe for a crowd. Title, 3 ingredients, 2 steps.`;
-                    const mockRecipe = "🏈 Gameday Garlic Parmesan Wings\n\nIngredients:\n- 2 lbs Chicken Wings\n- 1/4 cup Grated Parmesan\n- 1 tbsp Garlic Powder\n\nSteps:\n1. Toss wings in a bowl with a little oil. Set Air Fryer to 390°F and cook for 20 mins, flipping halfway.\n2. In a clean bowl, toss the hot, crispy wings with the garlic powder and parmesan until coated. Serve immediately!";
-                    let recipe = mockRecipe;
-                    if(apiKey) { try { recipe = await callGemini(prompt, "You are a professional chef."); } catch(e){} }
-                    setShowRecipeModal({ product, content: recipe });
-                } catch (err) { console.error(err); } finally { setRecipeLoading(false); }
             };
 
             useEffect(() => {
