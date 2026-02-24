@@ -1,0 +1,669 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #6d6d6d; -webkit-text-stroke: #6d6d6d}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #6b0001; -webkit-text-stroke: #6b0001}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #fb0007; -webkit-text-stroke: #fb0007}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #0000ff; -webkit-text-stroke: #0000ff}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; -webkit-text-stroke: #000000}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; -webkit-text-stroke: #000000; min-height: 16.0px}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #4d5055; -webkit-text-stroke: #4d5055}
+    span.s1 {font-kerning: none; background-color: #ecf1f7}
+    span.s2 {font-kerning: none; color: #fb0007; background-color: #ecf1f7; -webkit-text-stroke: 0px #fb0007}
+    span.s3 {font-kerning: none; color: #2a2a2a; background-color: #ecf1f7; -webkit-text-stroke: 0px #2a2a2a}
+    span.s4 {font-kerning: none; color: #000000; background-color: #ecf1f7; -webkit-text-stroke: 0px #000000}
+    span.s5 {font-kerning: none; color: #0000ff; background-color: #ecf1f7; -webkit-text-stroke: 0px #0000ff}
+    span.s6 {font-kerning: none; color: #6b0001; background-color: #ecf1f7; -webkit-text-stroke: 0px #6b0001}
+    span.s7 {font-kerning: none}
+    span.s8 {font-kerning: none; color: #093c94; background-color: #ecf1f7; -webkit-text-stroke: 0px #093c94}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE</span><span class="s2"> html</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s3">&lt;</span><span class="s1">html</span><span class="s4"> </span><span class="s2">lang</span><span class="s3">=</span><span class="s5">"en"</span><span class="s3">&gt;</span></p>
+<p class="p2"><span class="s3">&lt;</span><span class="s1">head</span><span class="s3">&gt;</span></p>
+<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">meta</span><span class="s4"> </span><span class="s1">charset</span><span class="s3">=</span><span class="s5">"UTF-8"</span><span class="s3">&gt;</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">meta</span><span class="s4"> </span><span class="s2">name</span><span class="s3">=</span><span class="s1">"viewport"</span><span class="s4"> </span><span class="s2">content</span><span class="s3">=</span><span class="s1">"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"</span><span class="s3">&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">title</span><span class="s3">&gt;</span><span class="s1">Ninja Shopper Agent Prototype</span><span class="s3">&lt;/</span><span class="s6">title</span><span class="s3">&gt;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p7"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- React &amp; ReactDOM --&gt;</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">script</span><span class="s4"> </span><span class="s2">crossorigin</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://unpkg.com/react@18/umd/react.production.min.js"</span><span class="s3">&gt;&lt;/</span><span class="s6">script</span><span class="s3">&gt;</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">script</span><span class="s4"> </span><span class="s2">crossorigin</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"</span><span class="s3">&gt;&lt;/</span><span class="s6">script</span><span class="s3">&gt;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p7"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Babel for in-browser JSX compilation --&gt;</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">script</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://unpkg.com/@babel/standalone/babel.min.js"</span><span class="s3">&gt;&lt;/</span><span class="s6">script</span><span class="s3">&gt;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p7"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Tailwind CSS --&gt;</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">script</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://cdn.tailwindcss.com"</span><span class="s3">&gt;&lt;/</span><span class="s6">script</span><span class="s3">&gt;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p7"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Lucide Icons --&gt;</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">script</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://unpkg.com/lucide@latest"</span><span class="s3">&gt;&lt;/</span><span class="s6">script</span><span class="s3">&gt;</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s1">style</span><span class="s3">&gt;</span></p>
+<p class="p7"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">/* Hide scrollbar for clean UI */</span></p>
+<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.scrollbar-hide::-webkit-scrollbar</span><span class="s4"> { </span><span class="s2">display:</span><span class="s4"> </span><span class="s8">none</span><span class="s4">; }</span></p>
+<p class="p3"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s6">.scrollbar-hide</span><span class="s4"> { </span><span class="s1">-ms-overflow-style:</span><span class="s4"> </span><span class="s8">none</span><span class="s4">; </span><span class="s1">scrollbar-width:</span><span class="s4"> </span><span class="s8">none</span><span class="s4">; }</span></p>
+<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">style</span><span class="s3">&gt;</span></p>
+<p class="p2"><span class="s3">&lt;/</span><span class="s1">head</span><span class="s3">&gt;</span></p>
+<p class="p4"><span class="s3">&lt;</span><span class="s6">body</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-[#f0f0f0]"</span><span class="s3">&gt;</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"root"</span><span class="s3">&gt;&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">script</span><span class="s4"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"text/babel"</span><span class="s3">&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const { useState, useEffect, useRef } = React;</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>// Helper component to render icons in a standalone HTML file</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const Icon = ({ name, size = 24, className = "", strokeWidth = 2, fill = "none" }) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const iconRef = useRef(null);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>useEffect(() =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>if (iconRef.current &amp;&amp; window.lucide) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>iconRef.current.innerHTML = `&lt;i data-lucide="${name}" class="${className}" style="width:${size}px; height:${size}px; stroke-width:${strokeWidth}; fill:${fill};"&gt;&lt;/i&gt;`;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>window.lucide.createIcons({ root: iconRef.current });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}, [name, size, className, strokeWidth, fill]);</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>return &lt;span ref={iconRef} style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}&gt;&lt;/span&gt;;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const App = () =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>// --- GEMINI API CONFIG ---</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const apiKey = ""; // Add API key if needed, or leave empty for mock responses</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const model = "gemini-2.5-flash-preview-09-2025";</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const callGemini = async (prompt, systemInstruction = "") =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>// If no API key is provided, simulate a response so the prototype doesn't break for the team</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>if(!apiKey) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>console.warn("No API Key provided. Returning mock response.");</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>return new Promise(resolve =&gt; setTimeout(() =&gt; resolve("Analyzed intent: Shopping for event."), 800));</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>const payload = {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>contents: [{ parts: [{ text: prompt }] }],</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>systemInstruction: { parts: [{ text: systemInstruction }] }</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>let delay = 1000;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>for (let i = 0; i &lt; 5; i++) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>try {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>const response = await fetch(url, {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>method: 'POST',</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>headers: { 'Content-Type': 'application/json' },</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>body: JSON.stringify(payload)</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>});</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>const result = await response.json();</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>return result.candidates?.[0]?.content?.parts?.[0]?.text;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>} catch (error) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>if (i === 4) throw error;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>await new Promise(resolve =&gt; setTimeout(resolve, delay));</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>delay *= 2;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>// --- STATE ---</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const [view, setView] = useState('home');<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const [activeBrand, setActiveBrand] = useState('ninja');<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const [messages, setMessages] = useState([]);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const [currentStep, setCurrentStep] = useState(0);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const [isTyping, setIsTyping] = useState(false);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const [inputValue, setInputValue] = useState("");</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const [aiAnalyzing, setAiAnalyzing] = useState(false);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const [recipeLoading, setRecipeLoading] = useState(false);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const [showRecipeModal, setShowRecipeModal] = useState(null);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const [showProductModal, setShowProductModal] = useState(null);<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const [paymentProcessing, setPaymentProcessing] = useState(false);<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const [aiBrainInsight, setAiBrainInsight] = useState("Waiting for input...");</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const [cartCount, setCartCount] = useState(0);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const [cartItems, setCartItems] = useState([]);<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const [activeCategory, setActiveCategory] = useState('airfryer');<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const [scrollToResults, setScrollToResults] = useState(false);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const [diagnosticSelections, setDiagnosticSelections] = useState({</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>size: null, layout: null, type: null,</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>blender_size: null, blender_type: null, blender_tech: null</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const [userProfile, setUserProfile] = useState({</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>name: "Bhagath",</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>demographic: "Male, Mid-30s",</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>location: "San Ramon, CA",</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>ownedProducts: ["Ninja Creami"],</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>preferences: {}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const chatEndRef = useRef(null);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const resultsTopRef = useRef(null);</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>// --- MOCK DATA ---</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const dataCategories = [</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{ id: 1, name: "Shopper Profile", status: "Active", detail: "Mid-30s Male / Efficiency Seeker" },</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{ id: 2, name: "Order History", status: "Active", detail: "Ninja Creami Owner" },</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{ id: 5, name: "✨ AI Intent Analysis", status: "Active", detail: aiBrainInsight },</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{ id: 6, name: "Logistics", status: "Active", detail: "Prioritizing Fast Delivery" },</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{ id: 8, name: "Review Insights", status: "Active", detail: "Grounded in Ninja Corpus" },</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>];</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const categoryInsights = [</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{ title: "Crispi™ Pro Glass Series", consensus: "Unmatched visibility &amp; 'Snap-and-Store' ease.", bestFor: "Aesthetic kitchens &amp; health-focused meal prep." },</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{ title: "DoubleStack™ Series", consensus: "Obsessed with footprint-to-volume ratio.", bestFor: "Urban professionals &amp; narrow counters." },</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{ title: "DualZone™ Series", consensus: "Highest-rated for 'Life-Changing Utility'.", bestFor: "Families &amp; multi-part meal timing." },</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{ title: "Ninja Professional Plus", consensus: "Best-in-class ice crushing for margaritas.", bestFor: "Party hosts &amp; large batches." }</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>];</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const allProducts = [</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{ id: 'crispi-pro-cyberspace', category: 'airfryer', name: "Ninja Crispi™ Pro 6-in-1 Glass Air Fryer (Cyberspace)", tag: "Best Seller", type: 'glass', size: 'large', layout: 'wide', description: "Sleek Cyberspace finish. 6-in-1 functionality with high-visibility glass. Cook, monitor, and store in the same bowl.", price: "$199.99", promoPrice: "$159.99", image: "https://i.ibb.co/wNczzcgx/slate-glass-airfryer.png", fallbackImage: "https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&amp;fit=crop&amp;q=80&amp;w=600", rating: 4.9 },</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{ id: 'crispi-pro-rose', category: 'airfryer', name: "Ninja Crispi™ Pro 6-in-1 Glass Air Fryer (Rose Quartz)", tag: "Trending Color", type: 'glass', size: 'large', layout: 'wide', description: "Elegant Rose Quartz edition. Perfect for modern aesthetics while offering professional 6-in-1 roasting and air frying.", price: "$199.99", promoPrice: "$159.99", image: "https://i.ibb.co/gLSY31kH/rose-glass-airfryer.png", fallbackImage: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&amp;fit=crop&amp;q=80&amp;w=600", rating: 4.8 },</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{ id: 'crispi-pro-bone', category: 'airfryer', name: "Ninja Crispi™ Pro 6-in-1 Glass Air Fryer (Bone)", tag: "Classic Finish", type: 'glass', size: 'large', layout: 'wide', description: "Deep Charcoal finish. Features a heat-resistant clear glass basket and 'Keep Warm' functionality for party hosting.", price: "$199.99", promoPrice: "$159.99", image: "https://i.ibb.co/NdqztvhF/bone-glass-airfryer.png", fallbackImage: "https://images.unsplash.com/photo-1585238341267-1cfec2046a55?auto=format&amp;fit=crop&amp;q=80&amp;w=600", rating: 4.9 },</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{ id: 'blender-system', category: 'blender', name: "Ninja® Professional Plus Kitchen System with Auto-iQ®", tag: "Total Kitchen Solution", type: 'system', description: "72 oz. Pitcher, 64 oz. Processor Bowl, and single-serve cups. Features Auto-iQ technology for one-touch intelligence.", price: "$219.99", promoPrice: "$199.99", image: "https://i.ibb.co/Cpnz6Gt4/Gemini-Generated-Image-ygn232ygn232ygn2.png", rating: 4.9 },</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{ id: 'blender-ultimate', category: 'blender', name: "Ninja® Foodi® Power Blender Ultimate System", tag: "The Do-It-All", type: 'system', description: "Crushes, processes, and makes dough. Enhanced processing lid and nutrient extraction cups for versatility.", price: "$239.99", promoPrice: "$219.99", image: "https://i.ibb.co/tpQ3hNNp/Gemini-Generated-Image-cpe9r9cpe9r9cpe9.png", rating: 4.8 },</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{ id: 'blender-detect', category: 'blender', name: "Ninja Detect™ Kitchen System Power Blender Plus Processor Pro", tag: "Smartest Blender", type: 'system', description: "Features BlendSense™ Technology that automatically adjusts speed and time for perfectly smooth results. No guesswork.", price: "$229.99", promoPrice: "$189.99", image: "https://i.ibb.co/Pz1z14C2/Gemini-Generated-Image-8rb91o8rb91o8rb9.png", rating: 5.0 },</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{ id: 'acc-creami-pints', category: 'accessory', name: "Ninja® Creami® Pints (2-Pack)", tag: "Essential Add-on", type: 'storage', description: "Extra pints for your Ninja Creami. Pre-freeze more flavors for Gameday so you never run out.", price: "$29.99", promoPrice: "$24.99", image: "https://i.ibb.co/qMQ8qcFt/Screenshot-2026-02-10-at-12-33-23-AM.png", rating: 4.8 },</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>{ id: 'acc-cleancrisp', category: 'accessory', name: "6-QT CleanCrisp™ Container", tag: "Prep &amp; Store", type: 'storage', description: "Extra glass vessel for your Crispi system. Prep your wings ahead of time and swap baskets instantly during the party.", price: "$34.99", promoPrice: "$29.99", image: "https://i.ibb.co/r2Q7Z17m/Gemini-Generated-Image-347dje347dje347d.png", rating: 4.9 }</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>];</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>// --- LOGIC ---</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>useEffect(() =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>if (messages.length === 0) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>setMessages([{<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>role: 'agent',<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>content: `Hi ${userProfile.name}! 🌧️ It's a rainy day in San Ramon—perfect for staying in. \n\nSince you love your Creami, I've curated some upgrades for your kitchen just in time for the Big Game. What's on your prep list?`,</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>options: [</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ label: "Airfryer for party wings 🍗", value: "start_airfryer" },</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ label: "Blender for margaritas 🍹", value: "start_blender" },</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{ label: "Indoor Grill for burgers 🍔", value: "start_grill" }</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>]</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>}]);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>setCurrentStep(0);<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}, [userProfile.name]);</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const handleSendMessage = async (e) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>if (e) e.preventDefault();</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>if (!inputValue.trim()) return;</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>setScrollToResults(false);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>const userText = inputValue;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>setMessages(prev =&gt; [...prev, { role: 'user', content: userText }]);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>setInputValue("");</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>setIsTyping(true);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>setAiAnalyzing(true);</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>try {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>const analysisPrompt = `Analyze: "${userText}". User: ${userProfile.name}. Identify primary intent. Keep response under 10 words.`;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>const analysis = await callGemini(analysisPrompt, "You are a Shopper Insights analyst.");</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>setAiBrainInsight(analysis || "Extracted intent for local inventory matching.");</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>setAiAnalyzing(false);</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>const lowerText = userText.toLowerCase();</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>setTimeout(() =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>if (currentStep === 'waiting_for_airfryer_requirements') {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>const newPrefs = { ...diagnosticSelections };</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">                            </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>if (lowerText.includes("large") || lowerText.includes("party") || lowerText.includes("crowd") || lowerText.includes("family")) newPrefs.size = 'large';</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>else if (lowerText.includes("small") || lowerText.includes("just me") || lowerText.includes("1") || lowerText.includes("2")) newPrefs.size = 'small';</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>else newPrefs.size = 'large';</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>if (lowerText.includes("tight") || lowerText.includes("small space") || lowerText.includes("vertical") || lowerText.includes("narrow")) newPrefs.layout = 'vertical';</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>else newPrefs.layout = 'wide';</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>if (lowerText.includes("glass") || lowerText.includes("see") || lowerText.includes("watch") || lowerText.includes("window")) newPrefs.type = 'glass';</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>else if (lowerText.includes("metal") || lowerText.includes("classic")) newPrefs.type = 'metal';</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>else newPrefs.type = 'glass';</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setDiagnosticSelections(newPrefs);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setMessages(prev =&gt; [...prev, { role: 'agent', content: `Got it! Looking for a ${newPrefs.size} capacity, ${newPrefs.layout === 'vertical' ? 'space-saving' : 'standard'} layout, with ${newPrefs.type === 'glass' ? 'ClearCook glass' : 'classic metal'} baskets. &lt;br&gt;&lt;br&gt;Here are your best matches:` }]);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">                            </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setTimeout(() =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>const products = getFilteredProducts({ ...newPrefs, category: 'airfryer' });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>setMessages(prev =&gt; [...prev, {<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>role: 'agent', content: `I've matched specific models for you, Bhagath. Based on your Gameday needs, here are our top-rated &lt;b&gt;${newPrefs.type === 'glass' ? 'Crispi™ Pro Glass' : 'Air Fryer'}&lt;/b&gt; models:`,<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>type: 'carousel', products: products, isResultHeader: true</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>}]);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>setActiveCategory('airfryer');</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">                                </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>setTimeout(() =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>setMessages(prev =&gt; [...prev, {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>role: 'agent', content: "How do these look? Since you like the precision of the Creami, I can &lt;b&gt;Filter for Smart Thermometers&lt;/b&gt; 🌡️ if you want zero guesswork for your wings, or show &lt;b&gt;Similar Styles&lt;/b&gt;.",</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>options: [ { label: "Filter: Smart Thermometer 🌡️", value: "smart_probe" }, { label: "Show Similar Styles", value: "similar" }, { label: "They look great!", value: "continue" } ]</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>}]);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>setIsTyping(false);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>}, 1200);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>setCurrentStep(3.5); setScrollToResults(true);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>}, 800);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>return;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>if (currentStep === 'waiting_for_blender_requirements') {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>const newPrefs = { ...diagnosticSelections };</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>if (lowerText.includes("pitcher") || lowerText.includes("batch") || lowerText.includes("party")) newPrefs.blender_size = 'pitcher';</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>else newPrefs.blender_size = 'personal';</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>if (lowerText.includes("system") || lowerText.includes("process") || lowerText.includes("dough") || lowerText.includes("salsa")) newPrefs.blender_type = 'system';</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>else newPrefs.blender_type = 'drinks';</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>if (lowerText.includes("smart") || lowerText.includes("sense") || lowerText.includes("blendsense")) newPrefs.blender_tech = 'smart';</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>else newPrefs.blender_tech = 'auto_iq';</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setDiagnosticSelections(newPrefs);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>const products = getFilteredProducts({ category: 'blender' });<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setMessages(prev =&gt; [...prev, {<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>role: 'agent', content: `Based on your need for ${newPrefs.blender_size === 'pitcher' ? 'party batches' : 'personal drinks'} and ${newPrefs.blender_tech === 'smart' ? 'smart sensing' : 'standard controls'}, here are the top &lt;b&gt;Ninja Blenders&lt;/b&gt; available in San Ramon:`,<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>type: 'carousel', products: products, isResultHeader: true</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>}]);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setActiveCategory('blender');</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setCurrentStep(7); setScrollToResults(true); setAiAnalyzing(false); setIsTyping(false);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>return;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>if (currentStep === 3.5) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>if (lowerText.includes("thermometer") || lowerText.includes("smart")) handleUserSelection({value: 'smart_probe'}, true);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>else handleUserSelection({value: 'continue'}, true);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>} else if (currentStep === 8) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>if (lowerText.includes("show") || lowerText.includes("yes")) handleUserSelection({value: 'show_accessories'}, true);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>else handleUserSelection({value: 'checkout_skip_acc'}, true);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>} else {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setMessages(prev =&gt; [...prev, { role: 'agent', content: "I'm focusing on finding your perfect appliance right now. Could you clarify your preference based on the options?" }]);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setAiAnalyzing(false); setIsTyping(false);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>}, 1000);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>} catch (err) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>setAiAnalyzing(false); setIsTyping(false);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const handleUserSelection = (option, skipUserMessage) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>setScrollToResults(false);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>if (!skipUserMessage) setMessages(prev =&gt; [...prev, { role: 'user', content: option.label }]);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>const currentVal = option.value;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>if (currentVal === "apple_pay") {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>simulateApplePay();</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>return;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>setIsTyping(true);</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>setTimeout(() =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>let response = "";</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>let options = [];</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>if (currentStep === 0) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>if (currentVal === "start_airfryer") {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setMessages(prev =&gt; [...prev, {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>role: 'agent',</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>content: "Awesome! To match you with the perfect Air Fryer for Gameday, I just need to know 3 things:&lt;br&gt;&lt;br&gt;&lt;b&gt;Household Size:&lt;/b&gt; Are you typically cooking for a large family or just a household of one or two?&lt;br&gt;&lt;br&gt;&lt;b&gt;Kitchen Space:&lt;/b&gt; Are you tight on counter space and looking for a vertical, space-saving design, or do you have plenty of room for a traditional wide model?&lt;br&gt;&lt;br&gt;&lt;b&gt;Cooking Style:&lt;/b&gt; Do you prefer a standard metal basket, or would you like to see our Glass series that lets you monitor your food and store leftovers directly in the fridge?&lt;br&gt;&lt;br&gt;&lt;i&gt;You can type your answer like: 'I need a large one for a family, wide is fine, and I prefer glass.'&lt;/i&gt;",</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>}]);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setCurrentStep('waiting_for_airfryer_requirements'); setIsTyping(false); return;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>} else if (currentVal === "start_blender") {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setMessages(prev =&gt; [...prev, {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>role: 'agent',</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>content: "Let's find the right Blender! Tell me:&lt;br&gt;&lt;br&gt;&lt;b&gt;Serving Size:&lt;/b&gt; Do you need a large Pitcher or single-serve Cups?&lt;br&gt;&lt;br&gt;&lt;b&gt;Usage:&lt;/b&gt; Just for drinks, or a full Kitchen System (for salsa/dough)?&lt;br&gt;&lt;br&gt;&lt;b&gt;Technology:&lt;/b&gt; Do you prefer smart BlendSense technology that auto-adjusts to your ingredients, or standard buttons for familiar manual control?&lt;br&gt;&lt;br&gt;&lt;i&gt;You can say: 'I want a pitcher for margaritas and smart features.'&lt;/i&gt;"</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>}]);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setCurrentStep('waiting_for_blender_requirements'); setIsTyping(false); return;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>} else if (currentVal === "start_grill") {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>response = "Burgers are a Gameday classic! 🍔&lt;br&gt;&lt;br&gt;Since it's raining in San Ramon, an indoor solution is perfect. Actually, our &lt;b&gt;Crispi™ Air Fryers&lt;/b&gt; are rated even higher for burgers (less smoke!). Would you like to check those out?";</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>options = [ { label: "Show Air Fryers", value: "start_airfryer" }, { label: "Stick to Blenders", value: "start_blender" } ];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setCurrentStep(0);<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>}<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>else if (currentStep === 3.5) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>if (currentVal === "smart_probe") {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>const refinedProducts = allProducts.filter(p =&gt; p.category === 'airfryer' &amp;&amp; (p.id.includes('cyberspace') || p.id.includes('bone')));</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setMessages(prev =&gt; [...prev, { role: 'agent', content: "Great call. These models include the &lt;b&gt;Foodi™ Smart Thermometer&lt;/b&gt;. Just plug it in, set beef/chicken to your desired doneness, and it stops automatically when perfect.", type: 'carousel', products: refinedProducts, isResultHeader: true }]);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setScrollToResults(true);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>} else if (currentVal === "similar") {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>const similarProducts = allProducts.filter(p =&gt; p.category === 'airfryer' &amp;&amp; p.id.includes('rose'));</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setMessages(prev =&gt; [...prev, { role: 'agent', content: "Here are some other popular form factors:", type: 'carousel', products: similarProducts, isResultHeader: true }]);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setScrollToResults(true);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>} else {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>response = "Glad to hear it! Tap the cart icon on your favorite model to add it, and we'll move on to the drinks! 🍹";</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setMessages(prev =&gt; [...prev, { role: 'agent', content: response }]);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>setIsTyping(false); return;<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>else if (currentStep === 5) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>if (currentVal === "start_blender_flow") {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setMessages(prev =&gt; [...prev, {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>role: 'agent',</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>content: "Let's find the right Blender! Tell me:&lt;br&gt;&lt;br&gt;&lt;b&gt;Serving Size:&lt;/b&gt; Do you need a large Pitcher or single-serve Cups?&lt;br&gt;&lt;br&gt;&lt;b&gt;Usage:&lt;/b&gt; Just for drinks, or a full Kitchen System (for salsa/dough)?&lt;br&gt;&lt;br&gt;&lt;b&gt;Technology:&lt;/b&gt; Do you prefer smart BlendSense technology that auto-adjusts to your ingredients, or standard buttons for familiar manual control?&lt;br&gt;&lt;br&gt;&lt;i&gt;You can say: 'I want a pitcher for margaritas and smart features.'&lt;/i&gt;"</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>}]);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setCurrentStep('waiting_for_blender_requirements'); setIsTyping(false); return;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>} else {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>response = "No problem! Let's get that Air Fryer shipped to you.";</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>options = [{ label: "Buy with Pay", value: "apple_pay" }];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setCurrentStep(9);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>}<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>else if (currentStep === 8) {<span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>if (currentVal === "show_accessories") {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>const products = allProducts.filter(p =&gt; p.category === 'accessory');</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setMessages(prev =&gt; [...prev, { role: 'agent', content: "Here are the best accessories to reach that $400 threshold. The &lt;b&gt;Creami Pints&lt;/b&gt; are a shopper favorite!", type: 'carousel', products: products, isResultHeader: true }]);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setActiveCategory('accessory'); setScrollToResults(true); setIsTyping(false); return;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>} else {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>response = "Understood. Proceeding to checkout with your Air Fryer and Blender.";</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>options = [{ label: "Buy with Pay", value: "apple_pay" }];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setCurrentStep(9);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>if (response) setMessages(prev =&gt; [...prev, { role: 'agent', content: response, options }]);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>setIsTyping(false);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}, 1000);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const calculateTotal = (items) =&gt; items.reduce((acc, item) =&gt; acc + parseFloat(item.promoPrice.replace('$', '')), 0);</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const handleAddToCart = (product) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>const updatedCart = [...cartItems, product];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>setCartItems(updatedCart);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>setCartCount(updatedCart.length);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>setScrollToResults(false);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>setIsTyping(true);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>if (product.category === 'airfryer') {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>setTimeout(() =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>setMessages(prev =&gt; [...prev, {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>role: 'agent', content: `I've added the &lt;b&gt;${product.name}&lt;/b&gt; to your cart! 🛒&lt;br&gt;&lt;br&gt;&lt;b&gt;Gameday Pro Tip:&lt;/b&gt; To really nail the party, you'll want restaurant-style margaritas to go with those wings. &lt;br&gt;&lt;br&gt;Shall I help you find the &lt;b&gt;Perfect Ninja Blender&lt;/b&gt; for your setup?`,</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>options: [ { label: "Yes, find a Blender 🍹", value: "start_blender_flow" }, { label: "No, just Checkout", value: "checkout_skip" } ],</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>isResultHeader: true</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>}]);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>setCurrentStep(5); setScrollToResults(true); setIsTyping(false);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>}, 600);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>} else if (product.category === 'blender' || product.category === 'accessory') {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>const total = calculateTotal(updatedCart);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>const threshold = 400;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>setTimeout(() =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>if (total &lt; threshold) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>const gap = (threshold - total).toFixed(2);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>const gapCeiling = Math.ceil(parseFloat(gap));</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setMessages(prev =&gt; [...prev, {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>role: 'agent', content: `&lt;b&gt;${product.name}&lt;/b&gt; added. 🛒&lt;br&gt;&lt;br&gt;Your current cart total is - &lt;b&gt;$${total.toFixed(2)}&lt;/b&gt;, and you are &lt;b&gt;$${gap}&lt;/b&gt; away from the &lt;b&gt;$50 platinum discount&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Would you like me to show you products under &lt;b&gt;$${gapCeiling}&lt;/b&gt; so you get the discount?`,</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>options: [ { label: "Yes, show products", value: "show_accessories" }, { label: "Proceed to checkout", value: "checkout_skip_acc" } ],</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>isResultHeader: true</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>}]);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setCurrentStep(8); setScrollToResults(true);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>} else {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setMessages(prev =&gt; [...prev, {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>role: 'agent', content: `Boom! &lt;b&gt;${product.name}&lt;/b&gt; added.&lt;br&gt;&lt;br&gt;🎉 &lt;b&gt;Threshold Met!&lt;/b&gt; Cart Total: $${total.toFixed(2)}. &lt;br&gt;&lt;b&gt;$50 Platinum Discount Unlocked!&lt;/b&gt;&lt;br&gt;&lt;br&gt;Your Gameday bundle is ready.`,</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>options: [ { label: "Buy with Pay", value: "apple_pay" } ],</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>isResultHeader: true</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>}]);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>setCurrentStep(9); setScrollToResults(true);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>setIsTyping(false);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>}, 600);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const simulateApplePay = () =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>setPaymentProcessing(true);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>const subtotal = cartItems.reduce((acc, item) =&gt; acc + parseFloat(item.promoPrice.replace('$', '')), 0);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>let thresholdDiscount = subtotal &gt;= 400 ? 50 : 0;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>const tax = (subtotal - thresholdDiscount) * 0.0975;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>const total = (subtotal - thresholdDiscount) + tax;</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>setTimeout(() =&gt; setMessages(prev =&gt; [...prev, { role: 'agent', type: 'apple_pay_processing' }]), 500);</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>setTimeout(() =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>setPaymentProcessing(false); setCartCount(0); setCartItems([]);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>setMessages(prev =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>const filtered = prev.filter(m =&gt; m.type !== 'apple_pay_processing');</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>const receipt = `✅ &lt;b&gt;Payment Successful&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Order #SR-99281&lt;/b&gt;&lt;br&gt;📍 Delivery to San Ramon, CA&lt;br&gt;&lt;br&gt;${cartItems.map(i =&gt; `• ${i.name}`).join('&lt;br&gt;')}&lt;br&gt;&lt;br&gt;&lt;b&gt;Subtotal:&lt;/b&gt; $${subtotal.toFixed(2)}&lt;br&gt;${thresholdDiscount &gt; 0 ? `&lt;b&gt;Bulk Discount:&lt;/b&gt; -$${thresholdDiscount.toFixed(2)}&lt;br&gt;` : ''}&lt;b&gt;Tax (9.75%):&lt;/b&gt; $${tax.toFixed(2)}&lt;br&gt;----------------&lt;br&gt;&lt;b&gt;Total:&lt;/b&gt; $${total.toFixed(2)}&lt;br&gt;&lt;br&gt;Ready for kickoff! 🏈`;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>return [...filtered, { role: 'agent', content: receipt, complete: true }];</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>});</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}, 3000);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const getFilteredProducts = (filterCriteria) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>if (filterCriteria &amp;&amp; Array.isArray(filterCriteria)) return filterCriteria;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>let targetCat = activeCategory;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>if (filterCriteria &amp;&amp; filterCriteria.category) targetCat = filterCriteria.category;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>if (targetCat === 'blender') return allProducts.filter(p =&gt; p.category === 'blender');</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>if (targetCat === 'accessory') return allProducts.filter(p =&gt; p.category === 'accessory');</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>if (targetCat === 'airfryer') {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>let results = allProducts.filter(p =&gt; p.category === 'airfryer');</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>if (filterCriteria?.size) results = results.filter(p =&gt; (filterCriteria.size === 'small' ? p.tag.includes('Compact') : !p.tag.includes('Compact')));</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>if (filterCriteria?.type) results = results.filter(p =&gt; p.type === filterCriteria.type);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>return results.slice(0,3);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>return allProducts.filter(p =&gt; p.category === 'airfryer');</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>const generateRecipe = async (product) =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>setRecipeLoading(true);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>try {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>const prompt = `${userProfile.name} owns a ${product.name}. Generate a fun air fryer recipe for a crowd. Title, 3 ingredients, 2 steps.`;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>const mockRecipe = "🏈 Gameday Garlic Parmesan Wings\n\nIngredients:\n- 2 lbs Chicken Wings\n- 1/4 cup Grated Parmesan\n- 1 tbsp Garlic Powder\n\nSteps:\n1. Toss wings in a bowl with a little oil. Set Air Fryer to 390°F and cook for 20 mins, flipping halfway.\n2. In a clean bowl, toss the hot, crispy wings with the garlic powder and parmesan until coated. Serve immediately!";</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>let recipe = mockRecipe;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>if(apiKey) { try { recipe = await callGemini(prompt, "You are a professional chef."); } catch(e){} }</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>setShowRecipeModal({ product, content: recipe });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>} catch (err) { console.error(err); } finally { setRecipeLoading(false); }</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>useEffect(() =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>const timer = setTimeout(() =&gt; {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>if (scrollToResults &amp;&amp; !isTyping) resultsTopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>else chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}, 100);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>return () =&gt; clearTimeout(timer);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}, [messages, isTyping, paymentProcessing, scrollToResults]);</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>return (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div className="flex h-screen bg-[#f0f0f0] justify-center overflow-hidden font-sans"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div className="relative w-full max-w-[420px] h-full bg-white shadow-[0_40px_100px_rgba(0,0,0,0.2)] overflow-hidden flex flex-col border-x border-slate-200"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>{view === 'home' ? (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div className="flex flex-col h-full bg-white text-[#1a1a1a] pb-24 overflow-y-auto overflow-x-hidden scrollbar-hide relative"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;div className="bg-[#f8f8f8] px-4 py-2 flex items-center justify-between border-b border-slate-100 shrink-0"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div className="flex items-center gap-6"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;button onClick={() =&gt; setActiveBrand('shark')} className={`text-[10px] font-bold uppercase tracking-widest pb-1 transition-all ${activeBrand === 'shark' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-slate-400'}`}&gt;Shark&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;button onClick={() =&gt; setActiveBrand('ninja')} className={`text-[10px] font-bold uppercase tracking-widest pb-1 transition-all ${activeBrand === 'ninja' ? 'text-green-600 border-b-2 border-green-600' : 'text-slate-400'}`}&gt;Ninja&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div className="flex items-center gap-4 text-slate-400"&gt;&lt;span className="text-[10px] font-medium"&gt;Support&lt;/span&gt;&lt;span className="text-[10px] font-medium"&gt;Register&lt;/span&gt;&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;nav className="sticky top-0 z-50 bg-white/95 backdrop-blur px-4 py-4 flex items-center justify-between border-b border-slate-100 shrink-0"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div className="flex items-center gap-4"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;Icon name="menu" className="text-[#1a1a1a]" /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="text-2xl font-black tracking-tighter uppercase leading-none italic"&gt;{activeBrand === 'ninja' ? 'NINJA' : 'SHARK'}&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div className="flex items-center gap-5"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;Icon name="search" className="text-[#1a1a1a]" strokeWidth={1.5} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;Icon name="heart" className="text-[#1a1a1a]" strokeWidth={1.5} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="relative"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;Icon name="shopping-cart" className="text-[#1a1a1a]" strokeWidth={1.5} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>{cartCount &gt; 0 &amp;&amp; &lt;span className="absolute -top-1 -right-1 bg-[#1a1a1a] text-white text-[8px] font-bold w-4 h-4 rounded-full flex items-center justify-center transition-all duration-300 transform scale-100"&gt;{cartCount}&lt;/span&gt;}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/nav&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;section className="relative w-full aspect-[4/5] bg-[#1a1a1a] overflow-hidden flex flex-col justify-end p-8 shrink-0"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;img src={activeBrand === 'ninja' ? "https://images.unsplash.com/photo-1626074353765-517a681e40be?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" : "https://images.unsplash.com/photo-1558317374-067fb5f30001?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"} alt="Featured" className="absolute inset-0 w-full h-full object-cover opacity-80" /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"&gt;&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div className="relative z-10 space-y-4"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="inline-block px-3 py-1 bg-white/10 backdrop-blur text-white text-[9px] font-bold uppercase tracking-widest rounded border border-white/20"&gt;{activeBrand === 'ninja' ? 'Gameday Essentials' : 'Deep Cleaning Pro'}&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;h2 className="text-5xl font-black text-white leading-[0.85] tracking-tighter uppercase italic drop-shadow-2xl"&gt;{activeBrand === 'ninja' ? 'Win the\nBig Game' : 'PowerDetect™ Pro'}&lt;/h2&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;p className="text-slate-300 text-sm max-w-[280px] leading-tight font-medium"&gt;{activeBrand === 'ninja' ? "Prep party-sized batches in half the time." : "Intelligent dirt detection. Up to 70 min power."}&lt;/p&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="flex gap-3 pt-2"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;button className="flex-1 bg-white text-black py-4 rounded-full font-black text-[11px] uppercase tracking-widest shadow-xl transition-all active:scale-95"&gt;Shop Now&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;button className="flex-1 border border-white/50 text-white py-4 rounded-full font-black text-[11px] uppercase tracking-widest backdrop-blur-md active:scale-95"&gt;Explore&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/section&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;section className="px-6 pt-10 pb-6 shrink-0"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div className="flex items-end justify-between mb-8"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div&gt;&lt;h3 className="text-2xl font-black italic uppercase tracking-tighter leading-none"&gt;Shop {activeBrand === 'ninja' ? 'Kitchen' : 'Cleaning'}&lt;/h3&gt;&lt;p className="text-slate-400 text-[10px] uppercase font-bold tracking-widest mt-2"&gt;Bestselling Categories&lt;/p&gt;&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;Icon name="chevron-right" className="text-slate-300" /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div className="flex gap-6 overflow-x-auto scrollbar-hide px-1 pb-4"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>{[</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>{ name: activeBrand === 'ninja' ? 'Air Fryers' : 'Cordless Vacs', img: activeBrand === 'ninja' ? "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5" : "https://images.unsplash.com/photo-1558317374-067fb5f30001" },</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>{ name: activeBrand === 'ninja' ? 'Blenders' : 'Robot Vacs', img: activeBrand === 'ninja' ? "https://images.unsplash.com/photo-1570222094114-d054a817e56b" : "https://images.unsplash.com/photo-1589652717521-10c0d092dea9" },</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>{ name: activeBrand === 'ninja' ? 'Indoor Grills' : 'Mops', img: activeBrand === 'ninja' ? "https://images.unsplash.com/photo-1529692236671-f1f6e9460272" : "https://images.unsplash.com/photo-1584622650111-993a426fbf0a" },</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>{ name: activeBrand === 'ninja' ? 'Coffee Makers' : 'Air Purifiers', img: activeBrand === 'ninja' ? "https://images.unsplash.com/photo-1559056199-641a0ac8b55e" : "https://images.unsplash.com/photo-1585238341267-1cfec2046a55" }</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>].map((cat, i) =&gt; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div key={i} className="flex flex-col items-center gap-3 shrink-0"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div className="w-24 h-24 rounded-full bg-[#f8f8f8] border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;img src={`${cat.img}?q=80&amp;w=200&amp;auto=format&amp;fit=crop`} alt={cat.name} className="w-full h-full object-cover" /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;p className="text-[10px] font-black uppercase tracking-tight text-slate-800"&gt;{cat.name}&lt;/p&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>))}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/section&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;section className="mx-6 p-8 bg-[#1a1a1a] rounded-[2rem] text-white relative overflow-hidden mt-6 mb-12 shadow-2xl shrink-0"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;Icon name="zap" className="absolute -top-6 -right-6 text-white/5" size={128} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div className="relative z-10 space-y-4"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="flex items-center gap-2 text-green-400"&gt;&lt;Icon name="star" size={14} fill="currentColor" /&gt;&lt;span className="text-[10px] font-black uppercase tracking-widest"&gt;San Ramon Exclusive&lt;/span&gt;&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;h3 className="text-3xl font-black italic tracking-tighter uppercase leading-none"&gt;Rainy Day Upgrade?&lt;/h3&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;p className="text-slate-400 text-xs leading-relaxed max-w-[200px]"&gt;We noticed it's pouring in San Ramon 🌧️. Get free &lt;span className="text-white font-bold"&gt;Same-Day Delivery&lt;/span&gt; on all Gameday appliances to prep before kickoff.&lt;/p&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="pt-2 text-[9px] text-blue-400 font-bold uppercase tracking-widest"&gt;Complete Your Creami Kitchen&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/section&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;button onClick={() =&gt; setView('chat')} className="absolute bottom-6 right-6 w-16 h-16 bg-[#1a1a1a] text-white rounded-full shadow-[0_10px_40px_rgba(0,0,0,0.3)] flex items-center justify-center hover:scale-110 transition-transform active:scale-95 z-[100] group"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;Icon name="bot" size={30} strokeWidth={2.5} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>) : (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div className="flex flex-col h-full bg-white relative animate-in fade-in slide-in-from-right-10 duration-500"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;div className="px-6 py-5 border-b border-slate-100 flex items-center justify-between bg-white/90 backdrop-blur-xl sticky top-0 z-10 shrink-0"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div className="flex items-center gap-3"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;button onClick={() =&gt; setView('home')} className="p-2 -ml-2 hover:bg-slate-50 rounded-full transition-colors"&gt;&lt;Icon name="x" size={20} className="text-slate-400" /&gt;&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="w-10 h-10 rounded-full bg-[#1a1a1a] flex items-center justify-center text-white shadow-lg"&gt;&lt;Icon name="bot" size={22} /&gt;&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div&gt;&lt;h1 className="font-black text-sm uppercase italic tracking-tighter"&gt;Shopper Agent V4&lt;/h1&gt;&lt;div className="flex items-center gap-1.5 text-[9px] text-slate-500 font-bold uppercase tracking-widest"&gt;&lt;span className="flex items-center gap-1 text-blue-600"&gt;&lt;Icon name="map-pin" size={10} /&gt; San Ramon&lt;/span&gt;&lt;span className="w-0.5 h-0.5 rounded-full bg-slate-300"&gt;&lt;/span&gt;&lt;span className="flex items-center gap-1"&gt;&lt;Icon name="cloud-rain" size={10} /&gt; 58°F&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div className="relative"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;Icon name="shopping-cart" className="text-[#1a1a1a]" size={22} strokeWidth={1.5} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>{cartCount &gt; 0 &amp;&amp; &lt;span className="absolute -top-1 -right-1 bg-blue-600 text-white text-[8px] font-bold w-4 h-4 rounded-full flex items-center justify-center transition-all duration-300"&gt;{cartCount}&lt;/span&gt;}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;div className="flex-1 overflow-y-auto p-6 space-y-6 scroll-smooth scrollbar-hide"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>{messages.map((msg, idx) =&gt; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div key={idx} ref={msg.isResultHeader ? resultsTopRef : null} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'} animate-in fade-in slide-in-from-bottom-4 duration-500 scroll-mt-24`}&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div className={`max-w-[95%] flex gap-3 ${msg.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;div className={`w-8 h-8 rounded-full shrink-0 flex items-center justify-center text-white shadow-md ${msg.role === 'user' ? 'bg-blue-600' : 'bg-[#1a1a1a]'}`}&gt;{msg.role === 'user' ? &lt;Icon name="user" size={16} /&gt; : &lt;Icon name="bot" size={16} /&gt;}&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;div className="space-y-3 w-full"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                    </span>{msg.type === 'apple_pay_processing' ? (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;div className="p-6 bg-white border border-slate-200 rounded-3xl shadow-xl flex flex-col items-center justify-center gap-4 animate-in zoom-in duration-300"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                            </span>&lt;div className="w-16 h-16 rounded-full bg-black text-white flex items-center justify-center"&gt;&lt;Icon name="smartphone" size={32} className="animate-pulse" /&gt;&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                            </span>&lt;div className="text-center space-y-1"&gt;&lt;p className="font-black text-sm uppercase tracking-widest"&gt;Processing&lt;/p&gt;&lt;p className="text-[10px] text-slate-500 font-medium"&gt;Face ID Verified&lt;/p&gt;&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                            </span>&lt;Icon name="loader-2" size={24} className="animate-spin text-slate-300" /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                    </span>) : (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;div className={`px-5 py-3.5 rounded-3xl shadow-sm text-sm leading-relaxed whitespace-pre-wrap ${msg.role === 'user' ? 'bg-blue-600 text-white rounded-tr-none' : 'bg-[#f4f4f4] text-[#1a1a1a] rounded-tl-none font-medium'}`}&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                            </span>{msg.content &amp;&amp; typeof msg.content === 'string' ? &lt;div dangerouslySetInnerHTML={{__html: msg.content}} /&gt; : msg.content}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                    </span>)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                    </span>{msg.type === 'carousel' &amp;&amp; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;div className="flex gap-4 overflow-x-auto pb-6 scrollbar-hide -mx-2 px-2 snap-x animate-in slide-in-from-right-8 duration-700"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                            </span>{(msg.products || getFilteredProducts({})).map(prod =&gt; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                </span>&lt;div key={prod.id} className="min-w-[280px] w-[280px] bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-2xl flex flex-col snap-center relative group"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                    </span>&lt;div className="relative h-48 overflow-hidden cursor-pointer bg-white" onClick={() =&gt; setShowProductModal(prod)}&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                        </span>&lt;img src={prod.image} className="h-full w-full object-contain p-4 transition-transform duration-700 group-hover:scale-105" alt={prod.name} onError={(e) =&gt; { e.target.onerror = null; e.target.src = prod.fallbackImage || "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?q=80&amp;w=600&amp;auto=format&amp;fit=crop"; }} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                        </span>&lt;div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-2 py-1 rounded-lg text-[10px] font-black flex items-center gap-1 shadow-sm"&gt;&lt;Icon name="star" size={10} className="text-orange-500" fill="currentColor" /&gt; {prod.rating}&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                        </span>&lt;div className="absolute bottom-4 right-4 bg-white/20 backdrop-blur p-1.5 rounded-full text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity"&gt;&lt;Icon name="maximize-2" size={14}/&gt;&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                    </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                    </span>&lt;div className="p-6 flex flex-col flex-1"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                        </span>&lt;h4 className="font-black text-xs uppercase italic tracking-tighter mb-1"&gt;{prod.name}&lt;/h4&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                        </span>&lt;p className="text-[9px] text-blue-600 mb-3 font-bold uppercase tracking-widest"&gt;{prod.tag}&lt;/p&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                        </span>&lt;p className="text-[10px] text-slate-500 line-clamp-2 mb-4 font-medium leading-tight italic"&gt;"{prod.description}"&lt;/p&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                        </span>&lt;div className="mt-auto space-y-4"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                            </span>&lt;div className="flex items-center justify-between"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                                </span>&lt;div className="flex flex-col"&gt;&lt;span className="text-[10px] text-slate-400 line-through leading-none font-bold tracking-tighter"&gt;{prod.price}&lt;/span&gt;&lt;span className="font-black text-lg text-[#1a1a1a] tracking-tighter leading-none"&gt;{prod.promoPrice}&lt;/span&gt;&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                                </span>&lt;button onClick={() =&gt; handleAddToCart(prod)} className="w-10 h-10 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-all shadow-xl active:scale-95"&gt;&lt;Icon name="shopping-cart" size={18}/&gt;&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                            </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                            </span>&lt;button onClick={() =&gt; generateRecipe(prod)} disabled={recipeLoading} className="w-full py-3 bg-slate-50 hover:bg-slate-100 text-[#1a1a1a] text-[10px] font-black uppercase tracking-widest rounded-xl border border-slate-200 flex items-center justify-center gap-2 transition-all disabled:opacity-50"&gt;{recipeLoading ? &lt;Icon name="loader-2" size={12} className="animate-spin" /&gt; : &lt;Icon name="sparkles" size={12} /&gt;}✨ Smart Chef Insights&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                        </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                    </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                            </span>))}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                    </span>)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                    </span>{msg.options &amp;&amp; msg.type !== 'diagnostic_bubble' &amp;&amp; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;div className="flex flex-wrap gap-2"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                            </span>{msg.options.map((opt, oIdx) =&gt; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                </span>&lt;button key={oIdx} onClick={() =&gt; handleUserSelection(opt)} className={`px-5 py-2.5 rounded-full text-[11px] font-black uppercase tracking-widest shadow-sm transition-all active:scale-95 ${opt.value === 'apple_pay' ? 'bg-black text-white border-2 border-black flex items-center gap-2' : 'bg-white border-2 border-slate-100 hover:border-[#1a1a1a] hover:text-[#1a1a1a]'}`}&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                    </span>{opt.label}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                                </span>&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                            </span>))}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                    </span>)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>))}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>{isTyping &amp;&amp; &lt;div className="flex gap-2 items-center text-slate-400 text-[10px] font-black uppercase tracking-[0.2em]"&gt;&lt;Icon name="loader-2" size={14} className="animate-spin text-blue-500"/&gt; {aiAnalyzing ? "✨ Parsing DNA..." : "Think Logic..."}&lt;/div&gt;}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div ref={chatEndRef} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;form onSubmit={handleSendMessage} className="p-6 border-t border-slate-100 bg-white/50 backdrop-blur-md"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div className="relative"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;input type="text" value={inputValue} onChange={(e) =&gt; setInputValue(e.target.value)} placeholder={`Talk to your personal assistant, ${userProfile.name}...`} className="w-full bg-[#f4f4f4] border-none rounded-2xl px-6 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/10 placeholder:text-slate-400 font-medium" /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;button type="submit" className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 bg-[#1a1a1a] text-white rounded-xl shadow-xl transition-all active:scale-90 disabled:opacity-50"&gt;&lt;Icon name="send" size={16} /&gt;&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/form&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>{showProductModal &amp;&amp; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div className="absolute inset-0 z-[100] bg-white flex flex-col animate-in slide-in-from-bottom duration-300"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="relative h-[45%] bg-white"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;img src={showProductModal.image} className="w-full h-full object-contain p-8" alt={showProductModal.name} onError={(e) =&gt; { e.target.onerror = null; e.target.src = showProductModal.fallbackImage || "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?q=80&amp;w=600&amp;auto=format&amp;fit=crop"; }} /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;button onClick={() =&gt; setShowProductModal(null)} className="absolute top-6 right-6 w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center shadow-lg"&gt;&lt;Icon name="x" size={20}/&gt;&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="flex-1 p-8 overflow-y-auto"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div className="flex justify-between items-start mb-4"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;div&gt;&lt;p className="text-blue-600 text-[10px] font-black uppercase tracking-widest mb-1"&gt;{showProductModal.tag}&lt;/p&gt;&lt;h2 className="text-2xl font-black text-[#1a1a1a] uppercase italic leading-none"&gt;{showProductModal.name}&lt;/h2&gt;&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;div className="flex flex-col items-end"&gt;&lt;span className="text-xl font-black text-[#1a1a1a]"&gt;{showProductModal.promoPrice}&lt;/span&gt;&lt;span className="text-xs text-slate-400 line-through"&gt;{showProductModal.price}&lt;/span&gt;&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;p className="text-sm text-slate-600 font-medium leading-relaxed mb-8"&gt;{showProductModal.description}&lt;/p&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;button onClick={() =&gt; { handleAddToCart(showProductModal); setShowProductModal(null); }} className="w-full py-4 bg-[#1a1a1a] text-white rounded-full font-black text-xs uppercase tracking-[0.2em] shadow-xl active:scale-95 transition-all mb-4"&gt;Add to Cart&lt;/button&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>{showRecipeModal &amp;&amp; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div className="absolute inset-0 z-[100] bg-black/60 backdrop-blur-md flex items-center justify-center p-6 animate-in fade-in duration-300"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="bg-white w-full max-w-sm rounded-[2.5rem] overflow-hidden shadow-2xl animate-in zoom-in duration-300"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div className="bg-[#1a1a1a] p-5 flex justify-between items-center"&gt;&lt;div className="flex items-center gap-2"&gt;&lt;Icon name="chef-hat" className="text-blue-400" size={20} /&gt;&lt;h3 className="text-white font-black text-[10px] uppercase tracking-[0.2em]"&gt;Chef Grounding&lt;/h3&gt;&lt;/div&gt;&lt;button onClick={() =&gt; setShowRecipeModal(null)} className="text-slate-500 hover:text-white transition-colors"&gt;&lt;Icon name="x" size={22}/&gt;&lt;/button&gt;&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div className="p-8 space-y-6"&gt;&lt;div className="bg-slate-50 border border-slate-100 p-6 rounded-3xl"&gt;&lt;p className="text-[10px] font-black text-blue-600 mb-2 uppercase tracking-widest flex items-center gap-2"&gt;&lt;Icon name="sparkles" size={12}/&gt; AI Recipe for {showRecipeModal.product.name}&lt;/p&gt;&lt;div className="text-slate-800 text-sm leading-relaxed whitespace-pre-line font-bold italic tracking-tight"&gt;{showRecipeModal.content}&lt;/div&gt;&lt;/div&gt;&lt;button onClick={() =&gt; setShowRecipeModal(null)} className="w-full py-4 bg-[#1a1a1a] text-white rounded-full font-black text-[11px] uppercase tracking-[0.2em] shadow-xl active:scale-95 transition-all"&gt;Let's Cook&lt;/button&gt;&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>)}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div className="hidden xl:flex w-[480px] flex-col bg-[#0a0a0a] text-white border-l border-white/5 shrink-0 shadow-[-20px_0_50px_rgba(0,0,0,0.5)]"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div className="p-8 border-b border-white/5 flex items-center justify-between bg-black/40 backdrop-blur-xl"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div className="flex items-center gap-3"&gt;&lt;div className="p-2 bg-blue-500/10 rounded-xl"&gt;&lt;Icon name="database" className="text-blue-500" size={20} /&gt;&lt;/div&gt;&lt;div&gt;&lt;h2 className="font-black uppercase tracking-[0.25em] text-[10px] text-blue-400"&gt;Contextual Stack&lt;/h2&gt;&lt;p className="text-[9px] text-slate-500 font-bold uppercase tracking-widest mt-0.5"&gt;Live Session: {userProfile.name}_SR&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;Icon name="zap" size={18} className="text-blue-500 animate-pulse" /&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div className="p-8 space-y-10 overflow-y-auto scrollbar-hide"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;section className="space-y-5"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;div className="flex items-center gap-2"&gt;&lt;Icon name="trending-up" size={14} className="text-slate-600" /&gt;&lt;h3 className="text-[10px] font-black text-slate-600 uppercase tracking-widest"&gt;Active Intelligence&lt;/h3&gt;&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>{dataCategories.map(cat =&gt; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;div key={cat.id} className="bg-white/5 border border-white/10 rounded-3xl p-5 flex items-start gap-4 group hover:bg-white/10 transition-all cursor-default"&gt;&lt;div className={`mt-1 p-2 rounded-xl bg-slate-900 border border-white/5 text-slate-500 group-hover:text-blue-400 transition-colors`}&gt;{cat.id === 5 ? &lt;Icon name="sparkles" size={16} /&gt; : &lt;Icon name="check-circle-2" size={16} /&gt;}&lt;/div&gt;&lt;div className="flex-1 min-w-0"&gt;&lt;p className="text-[11px] font-black text-white leading-none uppercase tracking-widest"&gt;{cat.name}&lt;/p&gt;&lt;p className={`text-[10px] mt-2 leading-relaxed ${cat.id === 5 ? 'text-blue-400 font-bold italic' : 'text-slate-500 font-medium'}`}&gt;{cat.detail}&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>))}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/section&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;section className="space-y-5"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;div className="flex items-center gap-2 text-blue-500"&gt;&lt;Icon name="lightbulb" size={14} /&gt;&lt;h3 className="text-[10px] font-black uppercase tracking-widest"&gt;Grounded Product Insights&lt;/h3&gt;&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;div className="grid grid-cols-1 gap-4"&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>{categoryInsights.map((insight, idx) =&gt; (</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div key={idx} className="bg-gradient-to-br from-white/5 to-transparent border border-white/5 rounded-3xl p-5 space-y-3"&gt;&lt;div className="flex items-center justify-between"&gt;&lt;p className="text-[11px] font-black text-blue-100 uppercase tracking-tight italic"&gt;{insight.title}&lt;/p&gt;&lt;div className="w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]"&gt;&lt;/div&gt;&lt;/div&gt;&lt;p className="text-[10px] text-slate-500 font-medium leading-relaxed italic"&gt;"{insight.consensus}"&lt;/p&gt;&lt;div className="flex items-center gap-2 pt-1 border-t border-white/5 mt-1"&gt;&lt;span className="text-[8px] font-black text-slate-600 uppercase tracking-widest"&gt;Audience:&lt;/span&gt;&lt;span className="text-[9px] text-blue-400 font-bold uppercase tracking-tighter"&gt;{insight.bestFor}&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>))}</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/section&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div className="mt-auto p-5 bg-black/60 border-t border-white/5 flex items-center justify-between font-mono text-[9px] text-slate-700 tracking-tighter uppercase shrink-0"&gt;&lt;div className="flex items-center gap-5"&gt;&lt;span className="flex items-center gap-1.5"&gt;&lt;div className="w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.5)]"&gt;&lt;/div&gt; GEMINI_GEN_AI_READY&lt;/span&gt;&lt;span className="opacity-50"&gt;latency: 28ms&lt;/span&gt;&lt;/div&gt;&lt;span className="opacity-40"&gt;Ninja_Agent_v4.0&lt;/span&gt;&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
+<p class="p6"><span class="s7"></span><br></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>const root = ReactDOM.createRoot(document.getElementById('root'));</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>root.render(&lt;App /&gt;);</span></p>
+<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">script</span><span class="s3">&gt;</span></p>
+<p class="p2"><span class="s3">&lt;/</span><span class="s1">body</span><span class="s3">&gt;</span></p>
+<p class="p2"><span class="s3">&lt;/</span><span class="s1">html</span><span class="s3">&gt;</span></p>
+</body>
+</html>
